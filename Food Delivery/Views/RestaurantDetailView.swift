@@ -24,7 +24,7 @@ struct RestaurantDetailView: View {
                 .font(.title)
                 .padding()
             if let detail = detail {
-                if detail.is_currently_open {
+                if detail.isOpen {
                     Text("Open")
                         .font(.headline)
                         .foregroundColor(.green)

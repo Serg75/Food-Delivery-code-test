@@ -18,7 +18,7 @@ struct RestaurantCard: View {
                 .frame(width: 100, height: 100)
             Text(restaurant.name)
                 .font(.headline)
-            Text("Delivery Time: \(restaurant.delivery_time_minutes) mins")
+            Text("Delivery Time: \(restaurant.deliveryTime) mins")
                 .font(.subheadline)
                 .foregroundColor(.gray)
         }
