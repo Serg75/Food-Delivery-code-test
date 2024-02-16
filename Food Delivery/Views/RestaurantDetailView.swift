@@ -11,33 +11,44 @@ struct RestaurantDetailView: View {
     @StateObject private var viewModel: DetailsViewModel
     @State private var detail: Status?
 
-    var restaurant: Restaurant
-    
     init(viewModel: DetailsViewModel) {
         _viewModel = StateObject(wrappedValue: viewModel)
-        self.restaurant = viewModel.restaurant
     }
     
     var body: some View {
         VStack {
+            AsyncImage(url: viewModel.imageUrl) { image in
+                image
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+            } placeholder: {
+                ProgressView()
+            }
+
             detailCard(viewModel: viewModel)
+                .padding(.top, -50)
+                .padding(.horizontal, 16)
         }
     }
 }
 
 @ViewBuilder
+@MainActor
 func detailCard(viewModel: DetailsViewModel) -> some View {
-    VStack {
+    VStack(alignment: .leading, spacing: 16.0) {
         Text(viewModel.restaurantName)
-            .font(.title)
-        Text(viewModel.restaurantDescription)
-            .font(.title2)
-            .foregroundColor(.gray)
+            .title()
+        Text(viewModel.filtersDescription)
+            .subtitle()
+        Text(viewModel.statusText)
+            .title1()
+            .foregroundColor(viewModel.statusColor)
     }
+    .frame(maxWidth: .infinity, alignment: .leading)
     .padding(16)
-    .background(Color.green)
-    .clipped()
-    .cornerRadius(12)
+    .background(Color(.systemBackground))
+    .clipShape(RoundedRectangle(cornerRadius: 12))
+    .shadow(color: Color.primary.opacity(0.15), radius: 4, x: 0, y: 3)
 }
 
 

@@ -8,6 +8,13 @@
 import Foundation
 import SwiftUI
 
+struct TitleStyle: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .font(.custom("Helvetica", size: 24).weight(.regular))
+    }
+}
+
 struct Title1Style: ViewModifier {
     func body(content: Content) -> some View {
         content
@@ -15,11 +22,19 @@ struct Title1Style: ViewModifier {
     }
 }
 
+struct SubtitleStyle: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .font(.custom("Helvetica", size: 16).weight(.regular))
+            .foregroundColor(Color(.systemGray))
+    }
+}
+
 struct Subtitle1Style: ViewModifier {
     func body(content: Content) -> some View {
         content
             .font(.custom("Helvetica", size: 12).weight(.bold))
-            .foregroundColor(Color(.systemGray2))
+            .foregroundColor(Color(.systemGray))
     }
 }
 
@@ -31,10 +46,18 @@ struct Footer1Style: ViewModifier {
 }
 
 extension View {
+    func title() -> some View {
+        modifier(TitleStyle())
+    }
+    
     func title1() -> some View {
         modifier(Title1Style())
     }
     
+    func subtitle() -> some View {
+        modifier(SubtitleStyle())
+    }
+
     func subtitle1() -> some View {
         modifier(Subtitle1Style())
     }

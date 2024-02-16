@@ -6,29 +6,48 @@
 //
 
 import Foundation
+import SwiftUI
 
 @MainActor class DetailsViewModel: ObservableObject {
-    let restaurantName: String
-    let restaurantDescription: String
-    @Published var restaurantStatus: Status?
+    @Published var restaurantName = ""
+    @Published var filtersDescription = ""
+    @Published var imageUrl: URL?
+    @Published var statusText = "---"
+    @Published var statusColor = Color.primary
     @Published var isLoading = false
     
-    let restaurant: Restaurant
+    private let restaurant: Restaurant
     
-    private let fetcher: StatusFetcher
+    private var filterHandler = FilterHandler()
+    private let statusFetcher: StatusFetcher
     
     init(restaurant: Restaurant, fetcher: StatusFetcher = StatusFetcher()) {
         self.restaurant = restaurant
-        self.fetcher = fetcher
-        self.restaurantName = restaurant.name
-        self.restaurantDescription = ""//restaurant.filtersDescription
+        self.statusFetcher = fetcher
+        updateFields()
+        fetchFilterDescriptions()
+        fetchRestaurantStatus()
     }
     
-    func fetchRestaurantStatus() {
+    private func updateFields() {
+        restaurantName = restaurant.name
+        imageUrl = URL(string: restaurant.imageUrl)
+    }
+    
+    private func fetchFilterDescriptions() {
+        Task {
+            await filterHandler.fetchFilterDescriptions(for: restaurant)
+            filtersDescription = filterHandler.updateFilterDescriptions()
+        }
+    }
+
+    private func fetchRestaurantStatus() {
         Task {
             do {
                 isLoading = true
-                restaurantStatus = try await fetcher.fetchResult(query: restaurant.id)
+                let status = try await statusFetcher.fetchResult(query: restaurant.id)
+                statusText = status.isOpen ? "Open" : "Closed"
+                statusColor = status.isOpen ? Color(hex: 0x2ECC71) : Color(hex: 0xC0392B)
             } catch {
                 print("Failed to fetch restaurant detail: \(error)")
             }

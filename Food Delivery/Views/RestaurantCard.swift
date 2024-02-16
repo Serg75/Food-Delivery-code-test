@@ -32,7 +32,7 @@ struct RestaurantCard: View {
             bottomLeadingRadius: 0,
             bottomTrailingRadius: 0,
             topTrailingRadius: 12))
-        .shadow(color: Color(.systemGray4), radius: 10, x: 5, y: 5)
+        .shadow(color: Color.primary.opacity(0.15), radius: 4, x: 0, y: 3)
     }
 }
 
@@ -40,7 +40,7 @@ struct RestaurantCard: View {
 @MainActor
 func card(viewModel: RestaurantCardViewModel) -> some View {
     VStack(alignment: .leading, spacing: 4.0) {
-        Text(viewModel.name)
+        Text(viewModel.restaurantName)
             .title1()
         Text(viewModel.filtersDescription)
             .subtitle1()
