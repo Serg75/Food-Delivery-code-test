@@ -9,7 +9,7 @@ import SwiftUI
 
 struct RestaurantDetailView: View {
     @StateObject private var viewModel: DetailsViewModel
-    @State private var detail: OpenStatus?
+    @State private var detail: Status?
 
     var restaurant: Restaurant
     
@@ -20,26 +20,27 @@ struct RestaurantDetailView: View {
     
     var body: some View {
         VStack {
-            Text(restaurant.name)
-                .font(.title)
-                .padding()
-            if let detail = detail {
-                if detail.isOpen {
-                    Text("Open")
-                        .font(.headline)
-                        .foregroundColor(.green)
-                } else {
-                    Text("Closed")
-                        .font(.headline)
-                        .foregroundColor(.red)
-                }
-            }
+            detailCard(viewModel: viewModel)
         }
     }
 }
 
-//struct RestaurantDetailView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        RestaurantDetailView()
-//    }
-//}
+@ViewBuilder
+func detailCard(viewModel: DetailsViewModel) -> some View {
+    VStack {
+        Text(viewModel.restaurantName)
+            .font(.title)
+        Text(viewModel.restaurantDescription)
+            .font(.title2)
+            .foregroundColor(.gray)
+    }
+    .padding(16)
+    .background(Color.green)
+    .clipped()
+    .cornerRadius(12)
+}
+
+
+#Preview {
+    RestaurantDetailView(viewModel: DetailsViewModel(restaurant: PreviewData.SomeRestaurant))
+}

@@ -9,19 +9,19 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject private var viewModel = RestaurantsViewModel()
-    @State private var selectedRestaurant: Restaurant?
+    @State private var selectedRestaurant: RestaurantCardViewModel?
     
     var body: some View {
-        List(viewModel.restaurants) { restaurant in
-            RestaurantCard(restaurant: restaurant)
+        List(viewModel.restaurants) { restaurantVM in
+            RestaurantCard(viewModel: restaurantVM)
                 .onTapGesture {
-                    selectedRestaurant = restaurant
+                    selectedRestaurant = restaurantVM
                 }
         }
         .navigationBarTitle("Restaurants")
         .overlay(ActivityIndicator(isAnimating: $viewModel.isLoading))
-        .sheet(item: $selectedRestaurant) { restaurant in
-            RestaurantDetailView(viewModel: DetailsViewModel(restaurant: restaurant))
+        .sheet(item: $selectedRestaurant) { restaurantVM in
+            RestaurantDetailView(viewModel: DetailsViewModel(restaurant: restaurantVM.restaurant))
         }
         .onAppear {
             viewModel.fetchRestaurants()

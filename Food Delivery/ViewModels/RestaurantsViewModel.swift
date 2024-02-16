@@ -8,7 +8,7 @@
 import Foundation
 
 @MainActor class RestaurantsViewModel: ObservableObject {
-    @Published var restaurants: [Restaurant] = []
+    @Published var restaurants: [RestaurantCardViewModel] = []
     @Published var isLoading = false
     
     private let fetcher: RestaurantsFetcher
@@ -21,7 +21,8 @@ import Foundation
         Task {
             do {
                 isLoading = true
-                restaurants = try await fetcher.fetchResult(query: "")
+                let fetchedRestaurants = try await fetcher.fetchResult(query: "")
+                restaurants = fetchedRestaurants.map { RestaurantCardViewModel(restaurant: $0) }
             } catch {
                 print("Failed to fetch restaurants: \(error)")
             }

@@ -14,7 +14,7 @@ final class RestaurantsFetcher: QueryFetcher {
         }
         
         let (data, _) = try await URLSession.shared.data(from: url)
-        let restaurantList = try JSONDecoder().decode(RestaurantList.self, from: data)
-        return restaurantList.restaurants
+        let restaurantList = try JSONDecoder().decode(API.Model.RestaurantList.self, from: data)
+        return restaurantList.restaurants.map(Restaurant.init)
     }
 }

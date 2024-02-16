@@ -8,7 +8,9 @@
 import Foundation
 
 @MainActor class DetailsViewModel: ObservableObject {
-    @Published var restaurantStatus: OpenStatus?
+    let restaurantName: String
+    let restaurantDescription: String
+    @Published var restaurantStatus: Status?
     @Published var isLoading = false
     
     let restaurant: Restaurant
@@ -18,6 +20,8 @@ import Foundation
     init(restaurant: Restaurant, fetcher: StatusFetcher = StatusFetcher()) {
         self.restaurant = restaurant
         self.fetcher = fetcher
+        self.restaurantName = restaurant.name
+        self.restaurantDescription = ""//restaurant.filtersDescription
     }
     
     func fetchRestaurantStatus() {
