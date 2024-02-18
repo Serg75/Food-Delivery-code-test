@@ -6,23 +6,28 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct RestaurantCard: View {
     @StateObject private var viewModel: RestaurantCardViewModel
     
-    init(viewModel: RestaurantCardViewModel) {
+    let size: CGSize
+    
+    init(viewModel: RestaurantCardViewModel, size: CGSize) {
         _viewModel = StateObject(wrappedValue: viewModel)
+        self.size = size
     }
     
     var body: some View {
         VStack(alignment: .leading) {
-            AsyncImage(url: viewModel.imageUrl) { image in
-                image
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-            } placeholder: {
-                ProgressView()
-            }
+            KFImage(viewModel.imageUrl)
+                .placeholder {
+                    ProgressView()
+                }
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(height: size.width * 0.35)
+                .clipped()
             
             card(viewModel: viewModel)
         }
@@ -58,6 +63,14 @@ func card(viewModel: RestaurantCardViewModel) -> some View {
 }
 
 #Preview {
-    RestaurantCard(viewModel: RestaurantCardViewModel(restaurant: PreviewData.SomeRestaurant))
-        .padding()
+    RestaurantCard(
+        viewModel:
+            RestaurantCardViewModel(
+                restaurant:
+                    PreviewData.SomeRestaurant),
+        size:
+            // iPhone 15 screen size
+            CGSize(width: 393, height: 852)
+    )
+    .padding()
 }

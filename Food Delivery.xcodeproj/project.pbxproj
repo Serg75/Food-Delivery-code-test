@@ -22,6 +22,7 @@
 		1820005C2B7F9F3E009B6575 /* FontStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1820005B2B7F9F3E009B6575 /* FontStyles.swift */; };
 		1820005F2B802C19009B6575 /* Color+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1820005E2B802C19009B6575 /* Color+Hex.swift */; };
 		182000622B802D31009B6575 /* FilterHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182000612B802D31009B6575 /* FilterHandler.swift */; };
+		1832F98E2B816FFE0009FF3A /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 1832F98D2B816FFE0009FF3A /* Kingfisher */; };
 		95DC1B972B7CAE71001B46EB /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DC1B962B7CAE71001B46EB /* App.swift */; };
 		95DC1B992B7CAE71001B46EB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DC1B982B7CAE71001B46EB /* ContentView.swift */; };
 		95DC1B9B2B7CAE84001B46EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95DC1B9A2B7CAE84001B46EB /* Assets.xcassets */; };
@@ -96,6 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1832F98E2B816FFE0009FF3A /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +286,9 @@
 			dependencies = (
 			);
 			name = "Food Delivery";
+			packageProductDependencies = (
+				1832F98D2B816FFE0009FF3A /* Kingfisher */,
+			);
 			productName = "Food Delivery";
 			productReference = 95DC1B932B7CAE71001B46EB /* Food Delivery.app */;
 			productType = "com.apple.product-type.application";
@@ -356,6 +361,9 @@
 				Base,
 			);
 			mainGroup = 95DC1B8A2B7CAE70001B46EB;
+			packageReferences = (
+				1832F98C2B816FFE0009FF3A /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 95DC1B942B7CAE71001B46EB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -582,6 +590,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Food Delivery/Preview Content\"";
+				DEVELOPMENT_TEAM = 5BQNE53G5V;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Food Delivery/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -603,6 +612,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Food Delivery/Preview Content\"";
+				DEVELOPMENT_TEAM = 5BQNE53G5V;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Food Delivery/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -737,6 +747,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1832F98C2B816FFE0009FF3A /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.11.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1832F98D2B816FFE0009FF3A /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1832F98C2B816FFE0009FF3A /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 95DC1B8B2B7CAE70001B46EB /* Project object */;
 }

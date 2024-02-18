@@ -12,19 +12,22 @@ struct ContentView: View {
     @State private var selectedRestaurant: RestaurantCardViewModel?
     
     var body: some View {
-        List(viewModel.restaurants) { restaurantVM in
-            RestaurantCard(viewModel: restaurantVM)
-                .onTapGesture {
-                    selectedRestaurant = restaurantVM
-                }
-        }
-        .navigationBarTitle("Restaurants")
-        .overlay(ActivityIndicator(isAnimating: $viewModel.isLoading))
-        .sheet(item: $selectedRestaurant) { restaurantVM in
-            RestaurantDetailView(viewModel: DetailsViewModel(restaurant: restaurantVM.restaurant))
-        }
-        .onAppear {
-            viewModel.fetchRestaurants()
+        GeometryReader { geometry in
+            List(viewModel.restaurants) { restaurantVM in
+                RestaurantCard(viewModel: restaurantVM, size: geometry.size)
+                    .onTapGesture {
+                        selectedRestaurant = restaurantVM
+                    }
+            }
+            .listStyle(PlainListStyle())
+            .navigationBarTitle("Restaurants")
+            .overlay(ActivityIndicator(isAnimating: $viewModel.isLoading))
+            .sheet(item: $selectedRestaurant) { restaurantVM in
+                RestaurantDetailView(viewModel: DetailsViewModel(restaurant: restaurantVM.restaurant))
+            }
+            .onAppear {
+                viewModel.fetchRestaurants()
+            }
         }
     }
 }

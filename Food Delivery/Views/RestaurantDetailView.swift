@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct RestaurantDetailView: View {
     @StateObject private var viewModel: DetailsViewModel
@@ -17,13 +18,12 @@ struct RestaurantDetailView: View {
     
     var body: some View {
         VStack {
-            AsyncImage(url: viewModel.imageUrl) { image in
-                image
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-            } placeholder: {
-                ProgressView()
-            }
+            KFImage(viewModel.imageUrl)
+                .placeholder {
+                    ProgressView()
+                }
+                .resizable()
+                .aspectRatio(contentMode: .fit)
 
             detailCard(viewModel: viewModel)
                 .padding(.top, -50)
