@@ -45,8 +45,15 @@ struct RestaurantCard: View {
 @MainActor
 func card(viewModel: RestaurantCardViewModel) -> some View {
     VStack(alignment: .leading, spacing: 4.0) {
-        Text(viewModel.restaurantName)
-            .title1()
+        HStack(alignment: .top) {
+            Text(viewModel.restaurantName)
+                .title1()
+
+            Spacer()
+
+            rating(ratingValue: viewModel.rating)
+                .padding(.top, 3)
+        }
         Text(viewModel.filtersDescription)
             .subtitle1()
         HStack {
@@ -60,6 +67,19 @@ func card(viewModel: RestaurantCardViewModel) -> some View {
     }
     .padding(.horizontal, 8)
     .padding(.bottom, 8)
+}
+
+@ViewBuilder
+@MainActor
+func rating(ratingValue: Double) -> some View {
+    HStack() {
+        Image("star icon")
+            .resizable()
+            .frame(width: 10, height: 10)
+        
+        Text(String(format: "%.1f", ratingValue))
+            .footer1()
+    }
 }
 
 #Preview {
