@@ -8,10 +8,10 @@
 import Foundation
 
 final class FilterFetcher: QueryFetcher {
-    private let cache = NSCache<NSString, StructWrapper<Filter>>()
+    private static let cache = NSCache<NSString, StructWrapper<Filter>>()
     
     func fetchResult(query: String) async throws -> Filter {
-        if let cachedFilter = cache.object(forKey: query as NSString) {
+        if let cachedFilter = FilterFetcher.cache.object(forKey: query as NSString) {
             return cachedFilter.value
         }
         
@@ -19,7 +19,7 @@ final class FilterFetcher: QueryFetcher {
         let apiFilter = try JSONDecoder().decode(API.Model.Filter.self, from: data)
         let filter = Filter(apiModel: apiFilter)
         
-        cache.setObject(StructWrapper(filter), forKey: query as NSString)
+        FilterFetcher.cache.setObject(StructWrapper(filter), forKey: query as NSString)
         
         return filter
     }
