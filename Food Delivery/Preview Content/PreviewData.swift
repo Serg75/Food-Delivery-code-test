@@ -17,8 +17,18 @@ struct PreviewData {
         return try! decoder.decode(type, from: data)
     }
 
+    static var AllRestaurants: [Restaurant] = {
+        let restaurantList = decodeJSON("restaurants", type: API.Model.RestaurantList.self)
+        return restaurantList.restaurants.map { Restaurant(apiModel: $0) }
+    }()
+    
     static var SomeRestaurant: Restaurant = {
         return Restaurant(apiModel: decodeJSON("restaurant", type: API.Model.Restaurant.self))
     }()
     
+    final class RestaurantsFetcher: RestaurantsQueryFetcher {
+        func fetchResult(query: String) async throws -> [Restaurant] {
+            return AllRestaurants
+        }
+    }
 }

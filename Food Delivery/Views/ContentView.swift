@@ -9,11 +9,19 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject private var viewModel = RestaurantsViewModel()
+    @StateObject private var filtersViewModel = FiltersViewModel(filterIDs: [])
+    @State private var filterIDs: [String] = []
 
     var body: some View {
-        GeometryReader { geometry in
-            RestaurantsView(viewModel: viewModel, size: geometry.size)
+        VStack {
+            FiltersView(viewModel: filtersViewModel)
+            
+            RestaurantsView(viewModel: viewModel, size: CGSize.zero)
         }
+        .background(Color(.systemGray6))
+        .onChange(of: viewModel.filters, perform: { value in
+            filtersViewModel.setFilters(filterIDs: value)
+        })
     }
 }
 

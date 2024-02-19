@@ -1,0 +1,86 @@
+{
+  "restaurants": [
+    {
+      "image_url": "https://food-delivery.umain.io/images/restaurant/candy.png",
+      "delivery_time_minutes": 45,
+      "filterIds": [
+        "5c64dea3-a4ac-4151-a2e3-42e7919a925d"
+      ],
+      "rating": 4.7,
+      "id": "7450002",
+      "name": "Yuma´s Candyshop"
+    },
+    {
+      "image_url": "https://food-delivery.umain.io/images/restaurant/meat.png",
+      "delivery_time_minutes": 1,
+      "filterIds": [
+        "5c64dea3-a4ac-4151-a2e3-42e7919a925d",
+        "23a38556-779e-4a3b-a75b-fcbc7a1c7a20",
+        "0017e59c-4407-453f-a5be-901695708015"
+      ],
+      "rating": 4.1,
+      "id": "7450007",
+      "name": "Emilia´s Fancy Food"
+    },
+    {
+      "image_url": "https://food-delivery.umain.io/images/restaurant/pizza.png",
+      "delivery_time_minutes": 3,
+      "filterIds": [
+        "23a38556-779e-4a3b-a75b-fcbc7a1c7a20",
+        "c67cd8a3-f191-4083-ad28-741659f214d7"
+      ],
+      "rating": 4.4,
+      "id": "7450010",
+      "name": "Pizzeria Varsha"
+    },
+    {
+      "image_url": "https://food-delivery.umain.io/images/restaurant/croissants.png",
+      "delivery_time_minutes": 17,
+      "filterIds": [
+        "5c64dea3-a4ac-4151-a2e3-42e7919a925d",
+        "0017e59c-4407-453f-a5be-901695708015"
+      ],
+      "rating": 5,
+      "id": "7450013",
+      "name": "Guillaume´s Croissants"
+    },
+    {
+      "image_url": "https://food-delivery.umain.io/images/restaurant/beer.png",
+      "delivery_time_minutes": 45,
+      "filterIds": [
+        "0017e59c-4407-453f-a5be-901695708015"
+      ],
+      "rating": 3.6,
+      "id": "7450040",
+      "name": "Martin´s Mancave"
+    },
+    {
+      "image_url": "https://food-delivery.umain.io/images/restaurant/coffee.png",
+      "delivery_time_minutes": 12,
+      "filterIds": [
+        "c67cd8a3-f191-4083-ad28-741659f214d7"
+      ],
+      "rating": 0.7,
+      "id": "7450041",
+      "name": "Henriks Muddy Water"
+    },
+    {
+      "image_url": "https://food-delivery.umain.io/images/restaurant/yogurt.png",
+      "delivery_time_minutes": 45,
+      "filterIds": [],
+      "rating": 1.2,
+      "id": "7450042",
+      "name": "Pontus Expired Yogurts"
+    },
+    {
+      "image_url": "https://food-delivery.umain.io/images/restaurant/bread.png",
+      "delivery_time_minutes": 60,
+      "filterIds": [
+        "0017e59c-4407-453f-a5be-901695708015"
+      ],
+      "rating": 4.7,
+      "id": "7450043",
+      "name": "Doortje Bed & Breakfast"
+    }
+  ]
+}

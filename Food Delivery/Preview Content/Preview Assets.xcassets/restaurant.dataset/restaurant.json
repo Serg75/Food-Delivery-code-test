@@ -2,7 +2,11 @@
   "image_url": "https://food-delivery.umain.io/images/restaurant/bread.png",
   "delivery_time_minutes": 60,
   "filterIds": [
-    "0017e59c-4407-453f-a5be-901695708015"
+    "0017e59c-4407-453f-a5be-901695708015",
+    "5c64dea3-a4ac-4151-a2e3-42e7919a925d",
+    "614fd642-3fa6-4f15-8786-dd3a8358cd78",
+    "c67cd8a3-f191-4083-ad28-741659f214d7",
+    "23a38556-779e-4a3b-a75b-fcbc7a1c7a20",
   ],
   "rating": 4.7,
   "id": "7450043",

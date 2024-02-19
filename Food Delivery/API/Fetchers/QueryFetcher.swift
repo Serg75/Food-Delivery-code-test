@@ -12,3 +12,7 @@ protocol QueryFetcher {
     
     func fetchResult(query: String) async throws -> Result
 }
+
+protocol RestaurantsQueryFetcher {
+    func fetchResult(query: String) async throws -> [Restaurant]
+}

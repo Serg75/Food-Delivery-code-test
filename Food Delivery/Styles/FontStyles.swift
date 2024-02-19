@@ -22,6 +22,13 @@ struct Title1Style: ViewModifier {
     }
 }
 
+struct Title2Style: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .font(.custom("Poppins", size: 14).weight(.regular))
+    }
+}
+
 struct SubtitleStyle: ViewModifier {
     func body(content: Content) -> some View {
         content
@@ -52,6 +59,10 @@ extension View {
     
     func title1() -> some View {
         modifier(Title1Style())
+    }
+    
+    func title2() -> some View {
+        modifier(Title2Style())
     }
     
     func subtitle() -> some View {

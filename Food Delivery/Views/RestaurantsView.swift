@@ -19,20 +19,22 @@ struct RestaurantsView: View {
     }
     
     var body: some View {
-        List(viewModel.restaurants) { restaurantVM in
-            RestaurantCard(viewModel: restaurantVM, size: size)
-                .onTapGesture {
-                    selectedRestaurant = restaurantVM
-                }
-        }
-        .listStyle(PlainListStyle())
-        .navigationBarTitle("Restaurants")
-        .overlay(ActivityIndicator(isAnimating: $viewModel.isLoading))
-        .sheet(item: $selectedRestaurant) { restaurantVM in
-            RestaurantDetailView(viewModel: DetailsViewModel(restaurant: restaurantVM.restaurant))
-        }
-        .onAppear {
-            viewModel.fetchRestaurants()
+        GeometryReader { geometry in
+            List(viewModel.restaurants) { restaurantVM in
+                RestaurantCard(viewModel: restaurantVM, size: geometry.size)
+                    .onTapGesture {
+                        selectedRestaurant = restaurantVM
+                    }
+            }
+            .listStyle(PlainListStyle())
+            .navigationBarTitle("Restaurants")
+            .overlay(ActivityIndicator(isAnimating: $viewModel.isLoading))
+            .sheet(item: $selectedRestaurant) { restaurantVM in
+                RestaurantDetailView(viewModel: DetailsViewModel(restaurant: restaurantVM.restaurant))
+            }
+            .onAppear {
+                viewModel.fetchRestaurants()
+            }
         }
     }
 }
@@ -40,7 +42,7 @@ struct RestaurantsView: View {
 #Preview {
     RestaurantsView(
         viewModel:
-            RestaurantsViewModel(),
+            RestaurantsViewModel(fetcher: PreviewData.RestaurantsFetcher()),
         size:
             // iPhone 15 screen size
         CGSize(width: 393, height: 852)
