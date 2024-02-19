@@ -9,6 +9,7 @@ import SwiftUI
 import Kingfisher
 
 struct RestaurantDetailView: View {
+    @Environment(\.dismiss) var dismiss
     @StateObject private var viewModel: DetailsViewModel
     @State private var detail: Status?
 
@@ -17,17 +18,36 @@ struct RestaurantDetailView: View {
     }
     
     var body: some View {
-        VStack {
-            KFImage(viewModel.imageUrl)
-                .placeholder {
-                    ProgressView()
-                }
-                .resizable()
-                .aspectRatio(contentMode: .fit)
+        ZStack (alignment: .top) {
+            VStack {
+                KFImage(viewModel.imageUrl)
+                    .placeholder {
+                        ProgressView()
+                    }
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
 
-            detailCard(viewModel: viewModel)
-                .padding(.top, -50)
-                .padding(.horizontal, 16)
+                detailCard(viewModel: viewModel)
+                    .padding(.top, -50)
+                    .padding(.horizontal, 16)
+            }
+            
+            VStack {
+                HStack {
+                    Button(action: {
+                        dismiss()
+                    }, label: {
+                        Image(.chevron)
+                            .shadow(color: .white.opacity(0.4), radius: 1, x: 0, y: 2)
+                    })
+                    .padding(.top, 40)
+                    .padding(.leading, 20)
+                    
+                    Spacer()
+                }
+                
+                Spacer()
+            }
         }
     }
 }
