@@ -23,6 +23,9 @@
 		1820005F2B802C19009B6575 /* Color+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1820005E2B802C19009B6575 /* Color+Hex.swift */; };
 		182000622B802D31009B6575 /* FilterHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182000612B802D31009B6575 /* FilterHandler.swift */; };
 		1832F98E2B816FFE0009FF3A /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 1832F98D2B816FFE0009FF3A /* Kingfisher */; };
+		1832F9902B836FAC0009FF3A /* TimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1832F98F2B836FAC0009FF3A /* TimeFormatter.swift */; };
+		1832F9932B8370500009FF3A /* TimeFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1832F9922B8370500009FF3A /* TimeFormatterTests.swift */; };
+		1832F9942B8370780009FF3A /* TimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1832F98F2B836FAC0009FF3A /* TimeFormatter.swift */; };
 		95DC1B972B7CAE71001B46EB /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DC1B962B7CAE71001B46EB /* App.swift */; };
 		95DC1B992B7CAE71001B46EB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DC1B982B7CAE71001B46EB /* ContentView.swift */; };
 		95DC1B9B2B7CAE84001B46EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95DC1B9A2B7CAE84001B46EB /* Assets.xcassets */; };
@@ -71,6 +74,8 @@
 		1820005B2B7F9F3E009B6575 /* FontStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontStyles.swift; sourceTree = "<group>"; };
 		1820005E2B802C19009B6575 /* Color+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Hex.swift"; sourceTree = "<group>"; };
 		182000612B802D31009B6575 /* FilterHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterHandler.swift; sourceTree = "<group>"; };
+		1832F98F2B836FAC0009FF3A /* TimeFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFormatter.swift; sourceTree = "<group>"; };
+		1832F9922B8370500009FF3A /* TimeFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFormatterTests.swift; sourceTree = "<group>"; };
 		95DC1B932B7CAE71001B46EB /* Food Delivery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Food Delivery.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		95DC1B962B7CAE71001B46EB /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		95DC1B982B7CAE71001B46EB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -149,6 +154,15 @@
 			isa = PBXGroup;
 			children = (
 				182000612B802D31009B6575 /* FilterHandler.swift */,
+				1832F98F2B836FAC0009FF3A /* TimeFormatter.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		1832F9912B83702C0009FF3A /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				1832F9922B8370500009FF3A /* TimeFormatterTests.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -203,6 +217,7 @@
 		95DC1BA72B7CAE85001B46EB /* Food DeliveryTests */ = {
 			isa = PBXGroup;
 			children = (
+				1832F9912B83702C0009FF3A /* Helpers */,
 				95DC1BA82B7CAE85001B46EB /* Food_DeliveryTests.swift */,
 				95DC1BAA2B7CAE85001B46EB /* Info.plist */,
 			);
@@ -409,6 +424,7 @@
 				1820005F2B802C19009B6575 /* Color+Hex.swift in Sources */,
 				95DC1BE92B7CE828001B46EB /* RestaurantsFetcher.swift in Sources */,
 				1820004A2B7E3CCA009B6575 /* Filter.swift in Sources */,
+				1832F9902B836FAC0009FF3A /* TimeFormatter.swift in Sources */,
 				95DC1BDD2B7CB0BC001B46EB /* RestaurantCard.swift in Sources */,
 				182000532B7EC1CD009B6575 /* API.Model.swift in Sources */,
 				182000422B7D5DE1009B6575 /* DetailsViewModel.swift in Sources */,
@@ -438,6 +454,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				95DC1BA92B7CAE85001B46EB /* Food_DeliveryTests.swift in Sources */,
+				1832F9942B8370780009FF3A /* TimeFormatter.swift in Sources */,
+				1832F9932B8370500009FF3A /* TimeFormatterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

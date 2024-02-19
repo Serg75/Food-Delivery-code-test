@@ -8,11 +8,11 @@
 import Foundation
 
 @MainActor class RestaurantCardViewModel: ObservableObject, Identifiable {
-    @Published var restaurantName: String = ""
-    @Published var rating: Double = 0.0
-    @Published var filtersDescription: String = ""
+    @Published var restaurantName = ""
+    @Published var rating = 0.0
+    @Published var filtersDescription = ""
     @Published var imageUrl: URL?
-    @Published var deliveryTime: Int = 0
+    @Published var deliveryTime = ""
     
     let restaurant: Restaurant
     
@@ -29,7 +29,7 @@ import Foundation
         rating = restaurant.rating
         filtersDescription = ""
         imageUrl = URL(string: restaurant.imageUrl)
-        deliveryTime = restaurant.deliveryTime
+        deliveryTime = TimeFormatter.formattedTime(minutesTotal: restaurant.deliveryTime)
     }
     
     private func fetchFilterDescriptions() {

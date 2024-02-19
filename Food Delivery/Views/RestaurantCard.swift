@@ -60,7 +60,7 @@ func card(viewModel: RestaurantCardViewModel) -> some View {
             Image("clock icon")
                 .resizable()
                 .frame(width: 10, height: 10)
-            Text("\(viewModel.deliveryTime) mins")
+            Text(viewModel.deliveryTime)
                 .footer1()
         }
         .padding(.top, 4.0)
