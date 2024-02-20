@@ -65,6 +65,7 @@ struct FiltersView: View {
             "c67cd8a3-f191-4083-ad28-741659f214d7",
             "23a38556-779e-4a3b-a75b-fcbc7a1c7a20"
         ])
+    
     return HStack {
         FiltersView(filtersVM: viewModel)
             .padding(.vertical, 10)

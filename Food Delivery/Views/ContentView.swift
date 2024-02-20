@@ -10,7 +10,6 @@ import SwiftUI
 struct ContentView: View {
     @StateObject private var restaurantsVM = RestaurantsViewModel()
     @StateObject private var filtersVM = FiltersViewModel(filterIDs: [])
-    @State private var filterIDs: [String] = []
 
     var body: some View {
         VStack {
@@ -23,7 +22,7 @@ struct ContentView: View {
             
             FiltersView(filtersVM: filtersVM)
             
-            RestaurantsView(viewModel: restaurantsVM, size: CGSize.zero)
+            RestaurantsView(viewModel: restaurantsVM)
         }
         .background(Color(.systemGray6))
         .onChange(of: restaurantsVM.allFilterIDs, perform: { value in
@@ -37,8 +36,6 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+#Preview {
+    ContentView()
 }

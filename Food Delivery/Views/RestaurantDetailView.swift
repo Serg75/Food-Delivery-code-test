@@ -11,7 +11,6 @@ import Kingfisher
 struct RestaurantDetailView: View {
     @Environment(\.dismiss) var dismiss
     @StateObject private var viewModel: DetailsViewModel
-    @State private var detail: Status?
 
     init(viewModel: DetailsViewModel) {
         _viewModel = StateObject(wrappedValue: viewModel)
@@ -27,7 +26,7 @@ struct RestaurantDetailView: View {
                     .resizable()
                     .aspectRatio(contentMode: .fit)
 
-                detailCard(viewModel: viewModel)
+                detailCardView(viewModel: viewModel)
                     .padding(.top, -50)
                     .padding(.horizontal, 16)
             }
@@ -54,7 +53,7 @@ struct RestaurantDetailView: View {
 
 @ViewBuilder
 @MainActor
-func detailCard(viewModel: DetailsViewModel) -> some View {
+func detailCardView(viewModel: DetailsViewModel) -> some View {
     VStack(alignment: .leading, spacing: 16.0) {
         Text(viewModel.restaurantName)
             .title()

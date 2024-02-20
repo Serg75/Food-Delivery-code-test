@@ -11,10 +11,11 @@ import Foundation
     @Published var filterVMs: [FilterViewModel] = []
     @Published var filterIDs: Set<String> = []
     
-    private var allFilters: [FilterViewModel] = []
-    private let filterFetcher = FilterFetcher()
+    private var allFilterVMs: [FilterViewModel] = []
+    private let filterFetcher: FilterQueryFetcher
 
-    init(filterIDs: [String]) {
+    init(filterIDs: [String], filterFetcher: FilterQueryFetcher = FilterFetcher()) {
+        self.filterFetcher = filterFetcher
         setFilters(filterIDs: filterIDs)
     }
 
@@ -29,7 +30,7 @@ import Foundation
             if let filter = try? await filterFetcher.fetchResult(query: filterID) {
                 let filterViewModel = FilterViewModel(filter: filter)
                 filterVMs.append(filterViewModel)
-                allFilters.append(filterViewModel)
+                allFilterVMs.append(filterViewModel)
             }
         }
     }

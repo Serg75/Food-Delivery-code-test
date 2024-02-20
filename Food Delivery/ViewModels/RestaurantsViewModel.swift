@@ -18,17 +18,17 @@ import Foundation
     @Published var isLoading = false
     
     private var allRestaurants: [RestaurantCardViewModel] = []
-    private let fetcher: any RestaurantsQueryFetcher
+    private let restaurantsFetcher: RestaurantsQueryFetcher
     
-    init(fetcher: any RestaurantsQueryFetcher = RestaurantsFetcher()) {
-        self.fetcher = fetcher
+    init(fetcher: RestaurantsQueryFetcher = RestaurantsFetcher()) {
+        self.restaurantsFetcher = fetcher
     }
     
     func fetchRestaurants() {
         Task {
             do {
                 isLoading = true
-                let fetchedRestaurants = try await fetcher.fetchResult(query: "")
+                let fetchedRestaurants = try await restaurantsFetcher.fetchResult()
                 allRestaurants = fetchedRestaurants.map { RestaurantCardViewModel(restaurant: $0) }
                 restaurants = allRestaurants
                 allFilterIDs = Array(Set(fetchedRestaurants.flatMap { $0.filters }))

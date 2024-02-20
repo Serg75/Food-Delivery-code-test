@@ -29,7 +29,7 @@ struct RestaurantCard: View {
                 .frame(height: size.width * 0.35)
                 .clipped()
             
-            card(viewModel: viewModel)
+            cardView(viewModel: viewModel)
         }
         .background(Color(.systemBackground))
         .clipShape(UnevenRoundedRectangle(
@@ -43,7 +43,7 @@ struct RestaurantCard: View {
 
 @ViewBuilder
 @MainActor
-func card(viewModel: RestaurantCardViewModel) -> some View {
+func cardView(viewModel: RestaurantCardViewModel) -> some View {
     VStack(alignment: .leading, spacing: 4.0) {
         HStack(alignment: .top) {
             Text(viewModel.restaurantName)
@@ -51,7 +51,7 @@ func card(viewModel: RestaurantCardViewModel) -> some View {
 
             Spacer()
 
-            rating(ratingValue: viewModel.rating)
+            ratingView(ratingValue: viewModel.rating)
                 .padding(.top, 3)
         }
         Text(viewModel.filtersDescription)
@@ -71,7 +71,7 @@ func card(viewModel: RestaurantCardViewModel) -> some View {
 
 @ViewBuilder
 @MainActor
-func rating(ratingValue: Double) -> some View {
+func ratingView(ratingValue: Double) -> some View {
     HStack() {
         Image("star icon")
             .resizable()

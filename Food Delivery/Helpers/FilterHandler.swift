@@ -7,9 +7,18 @@
 
 import Foundation
 
-class FilterHandler {
-    private let filterFetcher = FilterFetcher()
+protocol FilterHandlerProtocol {
+    var filtersDescription: String { get }
+    func fetchFilterDescriptions(for restaurant: Restaurant) async
+}
+
+class FilterHandler: FilterHandlerProtocol {
+    private let filterFetcher: FilterQueryFetcher
     private var filters = [Filter]()
+    
+    init(filterFetcher: FilterQueryFetcher = FilterFetcher()) {
+        self.filterFetcher = filterFetcher
+    }
     
     func fetchFilterDescriptions(for restaurant: Restaurant) async {
         for filterID in restaurant.filters {
@@ -19,7 +28,7 @@ class FilterHandler {
         }
     }
     
-    func updateFilterDescriptions() -> String {
+    var filtersDescription: String {
         return filters.map{ $0.name }.joined(separator: " • ")
     }
 }

@@ -42,7 +42,7 @@
 		95DC1BDD2B7CB0BC001B46EB /* RestaurantCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DC1BDC2B7CB0BC001B46EB /* RestaurantCard.swift */; };
 		95DC1BE22B7CB103001B46EB /* RestaurantDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DC1BE12B7CB103001B46EB /* RestaurantDetailView.swift */; };
 		95DC1BE92B7CE828001B46EB /* RestaurantsFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DC1BE82B7CE828001B46EB /* RestaurantsFetcher.swift */; };
-		95DC1BEE2B7CE856001B46EB /* QueryFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DC1BED2B7CE856001B46EB /* QueryFetcher.swift */; };
+		95DC1BEE2B7CE856001B46EB /* Fetchers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DC1BED2B7CE856001B46EB /* Fetchers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,7 +102,7 @@
 		95DC1BDC2B7CB0BC001B46EB /* RestaurantCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantCard.swift; sourceTree = "<group>"; };
 		95DC1BE12B7CB103001B46EB /* RestaurantDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailView.swift; sourceTree = "<group>"; };
 		95DC1BE82B7CE828001B46EB /* RestaurantsFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsFetcher.swift; sourceTree = "<group>"; };
-		95DC1BED2B7CE856001B46EB /* QueryFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryFetcher.swift; sourceTree = "<group>"; };
+		95DC1BED2B7CE856001B46EB /* Fetchers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fetchers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -289,7 +289,7 @@
 		95DC1BE72B7CE1BC001B46EB /* Fetchers */ = {
 			isa = PBXGroup;
 			children = (
-				95DC1BED2B7CE856001B46EB /* QueryFetcher.swift */,
+				95DC1BED2B7CE856001B46EB /* Fetchers.swift */,
 				1820004B2B7E3D71009B6575 /* FilterFetcher.swift */,
 				95DC1BE82B7CE828001B46EB /* RestaurantsFetcher.swift */,
 				1820003F2B7D5C72009B6575 /* StatusFetcher.swift */,
@@ -458,7 +458,7 @@
 				1832F99C2B839BD10009FF3A /* FilterViewModel.swift in Sources */,
 				95DC1B972B7CAE71001B46EB /* App.swift in Sources */,
 				1820005C2B7F9F3E009B6575 /* FontStyles.swift in Sources */,
-				95DC1BEE2B7CE856001B46EB /* QueryFetcher.swift in Sources */,
+				95DC1BEE2B7CE856001B46EB /* Fetchers.swift in Sources */,
 				95DC1BCB2B7CAF12001B46EB /* Restaurant.swift in Sources */,
 				182000512B7EC197009B6575 /* API.swift in Sources */,
 				182000402B7D5C72009B6575 /* StatusFetcher.swift in Sources */,

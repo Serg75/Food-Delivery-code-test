@@ -27,7 +27,7 @@ struct PreviewData {
     }()
     
     final class RestaurantsFetcher: RestaurantsQueryFetcher {
-        func fetchResult(query: String) async throws -> [Restaurant] {
+        func fetchResult() async throws -> [Restaurant] {
             return AllRestaurants
         }
     }

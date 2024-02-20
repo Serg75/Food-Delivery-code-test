@@ -18,6 +18,7 @@ struct ActivityIndicator: View {
     }
 }
 
-//#Preview {
-//    ActivityIndicator(isAnimating: true)
-//}
+#Preview {
+    @State var isAnimating = true
+    return ActivityIndicator(isAnimating: $isAnimating)
+}

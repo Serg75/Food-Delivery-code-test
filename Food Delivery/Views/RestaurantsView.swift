@@ -11,11 +11,9 @@ struct RestaurantsView: View {
     @StateObject private var viewModel: RestaurantsViewModel
     @State private var selectedRestaurant: RestaurantCardViewModel?
     
-    let size: CGSize
     
-    init(viewModel: RestaurantsViewModel, size: CGSize) {
+    init(viewModel: RestaurantsViewModel) {
         _viewModel = StateObject(wrappedValue: viewModel)
-        self.size = size
     }
     
     var body: some View {
@@ -44,9 +42,6 @@ struct RestaurantsView: View {
 #Preview {
     RestaurantsView(
         viewModel:
-            RestaurantsViewModel(fetcher: PreviewData.RestaurantsFetcher()),
-        size:
-            // iPhone 15 screen size
-        CGSize(width: 393, height: 852)
+            RestaurantsViewModel(fetcher: PreviewData.RestaurantsFetcher())
     )
 }

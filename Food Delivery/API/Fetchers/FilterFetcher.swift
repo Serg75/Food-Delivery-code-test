@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class FilterFetcher: QueryFetcher {
+final class FilterFetcher: FilterQueryFetcher {
     private static let cache = NSCache<NSString, StructWrapper<Filter>>()
     
     func fetchResult(query: String) async throws -> Filter {
