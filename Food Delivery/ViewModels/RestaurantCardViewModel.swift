@@ -9,6 +9,7 @@ import Foundation
 
 @MainActor class RestaurantCardViewModel: ObservableObject, Identifiable {
     @Published var filtersDescription = ""
+    let id = UUID()
     let restaurantName: String
     let rating: Double
     let imageUrl: URL?

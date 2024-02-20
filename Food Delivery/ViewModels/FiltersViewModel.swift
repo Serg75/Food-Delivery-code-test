@@ -8,10 +8,10 @@
 import Foundation
 
 @MainActor class FiltersViewModel: ObservableObject {
-    @Published var filterVMs: [FilterViewModel] = []
-    @Published var filterIDs: Set<String> = []
+    @Published var allFilterVMs: [FilterViewModel] = []
+    // used as binding from a view for the logic that determines which filters to display
+    @Published var selectedFilterIDs: Set<String> = []
     
-    private var allFilterVMs: [FilterViewModel] = []
     private let filterFetcher: FilterQueryFetcher
 
     init(filterIDs: [String], filterFetcher: FilterQueryFetcher = FilterFetcher()) {
@@ -29,7 +29,6 @@ import Foundation
         for filterID in filterIDs {
             if let filter = try? await filterFetcher.fetchResult(query: filterID) {
                 let filterViewModel = FilterViewModel(filter: filter)
-                filterVMs.append(filterViewModel)
                 allFilterVMs.append(filterViewModel)
             }
         }

@@ -57,3 +57,18 @@ import SwiftUI
         }
     }
 }
+
+// MARK: - Accessing private members from tests
+
+#if DEBUG
+extension DetailsViewModel {
+    
+    func exposedFetchFilterDescriptions() {
+        return fetchFilterDescriptions()
+    }
+    
+    func exposedFetchRestaurantStatus() {
+        return fetchRestaurantStatus()
+    }
+}
+#endif

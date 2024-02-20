@@ -26,14 +26,14 @@ struct ContentView: View {
             RestaurantsView(viewModel: restaurantsVM)
         }
         .background(Color(.systemGray6))
-        .onChange(of: restaurantsVM.allFilterIDs, perform: { value in
+        .onReceive(restaurantsVM.$allFilterIDs) { value in
             filtersVM.setFilters(filterIDs: value)
-        })
-        .onChange(of: filtersVM.filterIDs, perform: { value in
+        }
+        .onReceive(filtersVM.$selectedFilterIDs) { value in
             withAnimation {
-                restaurantsVM.filterIDs = value
+                restaurantsVM.filterIDsToShow = value
             }
-        })
+        }
         .onReceive(restaurantsVM.$errorMessage) { errorMessage in
             if errorMessage != nil {
                 showErrorAlert = true

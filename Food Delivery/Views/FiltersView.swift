@@ -14,7 +14,7 @@ struct FiltersView: View {
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             LazyHStack(spacing: 15) {
-                ForEach(filtersVM.filterVMs, id: \.id) { filterVM in
+                ForEach(filtersVM.allFilterVMs, id: \.id) { filterVM in
                     Button(action: {
                         toggleFilter(filterID: filterVM.filterID)
                     }) {
@@ -44,15 +44,15 @@ struct FiltersView: View {
             Spacer()
         }
         .frame(width: 144)
-        .isSelected(filtersVM.filterIDs.contains(viewModel.filterID))
+        .isSelected(filtersVM.selectedFilterIDs.contains(viewModel.filterID))
         .clipShape(Capsule())
     }
     
     private func toggleFilter(filterID: String) {
-        if filtersVM.filterIDs.contains(filterID) {
-            filtersVM.filterIDs.remove(filterID)
+        if filtersVM.selectedFilterIDs.contains(filterID) {
+            filtersVM.selectedFilterIDs.remove(filterID)
         } else {
-            filtersVM.filterIDs.insert(filterID)
+            filtersVM.selectedFilterIDs.insert(filterID)
         }
     }
 }

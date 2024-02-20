@@ -8,9 +8,12 @@
 import Foundation
 
 @MainActor class RestaurantsViewModel: ObservableObject {
+    // filtered restaurants by selected filters
     @Published var restaurants: [RestaurantCardViewModel] = []
+    // stores all filters found while fetching restaurants
     @Published var allFilterIDs: [String] = []
-    @Published var filterIDs: Set<String> = [] {
+    // set from outside to filter restaurants
+    @Published var filterIDsToShow: Set<String> = [] {
         didSet {
             filterRestaurants()
         }
@@ -41,11 +44,11 @@ import Foundation
     }
     
     private func filterRestaurants() {
-        if filterIDs.isEmpty {
+        if filterIDsToShow.isEmpty {
             restaurants = allRestaurants
             return
         }
         
-        restaurants = allRestaurants.filter { !$0.restaurant.filters.intersection(filterIDs).isEmpty }
+        restaurants = allRestaurants.filter { !$0.restaurant.filters.intersection(filterIDsToShow).isEmpty }
     }
 }

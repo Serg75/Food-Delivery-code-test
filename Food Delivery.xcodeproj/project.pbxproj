@@ -30,6 +30,11 @@
 		1832F9982B8384860009FF3A /* FiltersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1832F9972B8384860009FF3A /* FiltersView.swift */; };
 		1832F99A2B839AA20009FF3A /* FiltersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1832F9992B839AA20009FF3A /* FiltersViewModel.swift */; };
 		1832F99C2B839BD10009FF3A /* FilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1832F99B2B839BD10009FF3A /* FilterViewModel.swift */; };
+		1832F99F2B84478E0009FF3A /* DetailsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1832F99E2B84478E0009FF3A /* DetailsViewModelTests.swift */; };
+		1832F9A12B84829D0009FF3A /* XCTestCase+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1832F9A02B84829D0009FF3A /* XCTestCase+Combine.swift */; };
+		1832F9A92B84C6550009FF3A /* FiltersViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1832F9A82B84C6550009FF3A /* FiltersViewModelTests.swift */; };
+		1832F9AB2B84E0910009FF3A /* AppLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1832F9AA2B84E0910009FF3A /* AppLauncher.swift */; };
+		1832F9AD2B84E0DB0009FF3A /* TestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1832F9AC2B84E0DB0009FF3A /* TestApp.swift */; };
 		95DC1B972B7CAE71001B46EB /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DC1B962B7CAE71001B46EB /* App.swift */; };
 		95DC1B992B7CAE71001B46EB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DC1B982B7CAE71001B46EB /* ContentView.swift */; };
 		95DC1B9B2B7CAE84001B46EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95DC1B9A2B7CAE84001B46EB /* Assets.xcassets */; };
@@ -84,6 +89,11 @@
 		1832F9972B8384860009FF3A /* FiltersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersView.swift; sourceTree = "<group>"; };
 		1832F9992B839AA20009FF3A /* FiltersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersViewModel.swift; sourceTree = "<group>"; };
 		1832F99B2B839BD10009FF3A /* FilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewModel.swift; sourceTree = "<group>"; };
+		1832F99E2B84478E0009FF3A /* DetailsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModelTests.swift; sourceTree = "<group>"; };
+		1832F9A02B84829D0009FF3A /* XCTestCase+Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Combine.swift"; sourceTree = "<group>"; };
+		1832F9A82B84C6550009FF3A /* FiltersViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersViewModelTests.swift; sourceTree = "<group>"; };
+		1832F9AA2B84E0910009FF3A /* AppLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLauncher.swift; sourceTree = "<group>"; };
+		1832F9AC2B84E0DB0009FF3A /* TestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestApp.swift; sourceTree = "<group>"; };
 		95DC1B932B7CAE71001B46EB /* Food Delivery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Food Delivery.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		95DC1B962B7CAE71001B46EB /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		95DC1B982B7CAE71001B46EB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -171,8 +181,18 @@
 			isa = PBXGroup;
 			children = (
 				1832F9922B8370500009FF3A /* TimeFormatterTests.swift */,
+				1832F9A02B84829D0009FF3A /* XCTestCase+Combine.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		1832F99D2B8447630009FF3A /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				1832F99E2B84478E0009FF3A /* DetailsViewModelTests.swift */,
+				1832F9A82B84C6550009FF3A /* FiltersViewModelTests.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		95DC1B8A2B7CAE70001B46EB = {
@@ -205,7 +225,9 @@
 				95DC1BC52B7CAEAE001B46EB /* ViewModels */,
 				95DC1BC92B7CAEBD001B46EB /* Views */,
 				95DC1BE62B7CE1A6001B46EB /* API */,
+				1832F9AA2B84E0910009FF3A /* AppLauncher.swift */,
 				95DC1B962B7CAE71001B46EB /* App.swift */,
+				1832F9AC2B84E0DB0009FF3A /* TestApp.swift */,
 				95DC1B9A2B7CAE84001B46EB /* Assets.xcassets */,
 				95DC1B9F2B7CAE84001B46EB /* Info.plist */,
 				95DC1B9C2B7CAE84001B46EB /* Preview Content */,
@@ -226,6 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				1832F9912B83702C0009FF3A /* Helpers */,
+				1832F99D2B8447630009FF3A /* ViewModels */,
 				95DC1BA82B7CAE85001B46EB /* Food_DeliveryTests.swift */,
 				95DC1BAA2B7CAE85001B46EB /* Info.plist */,
 			);
@@ -449,6 +472,7 @@
 				1820004F2B7EC16B009B6575 /* API.Model.Restaurant.swift in Sources */,
 				182000622B802D31009B6575 /* FilterHandler.swift in Sources */,
 				95DC1BE22B7CB103001B46EB /* RestaurantDetailView.swift in Sources */,
+				1832F9AD2B84E0DB0009FF3A /* TestApp.swift in Sources */,
 				1820003E2B7CF27C009B6575 /* ActivityIndicator.swift in Sources */,
 				95DC1B992B7CAE71001B46EB /* ContentView.swift in Sources */,
 				182000592B7F7532009B6575 /* RestaurantCardViewModel.swift in Sources */,
@@ -456,6 +480,7 @@
 				95DC1BD82B7CAFAA001B46EB /* RestaurantsViewModel.swift in Sources */,
 				182000572B7F3BAA009B6575 /* API.Model.Status.swift in Sources */,
 				1832F99C2B839BD10009FF3A /* FilterViewModel.swift in Sources */,
+				1832F9AB2B84E0910009FF3A /* AppLauncher.swift in Sources */,
 				95DC1B972B7CAE71001B46EB /* App.swift in Sources */,
 				1820005C2B7F9F3E009B6575 /* FontStyles.swift in Sources */,
 				95DC1BEE2B7CE856001B46EB /* Fetchers.swift in Sources */,
@@ -470,8 +495,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				95DC1BA92B7CAE85001B46EB /* Food_DeliveryTests.swift in Sources */,
+				1832F9A12B84829D0009FF3A /* XCTestCase+Combine.swift in Sources */,
+				1832F9A92B84C6550009FF3A /* FiltersViewModelTests.swift in Sources */,
 				1832F9942B8370780009FF3A /* TimeFormatter.swift in Sources */,
 				1832F9932B8370500009FF3A /* TimeFormatterTests.swift in Sources */,
+				1832F99F2B84478E0009FF3A /* DetailsViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

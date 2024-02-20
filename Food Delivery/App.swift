@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-@main
 struct Food_DeliveryApp: App {
     var body: some Scene {
         WindowGroup {
