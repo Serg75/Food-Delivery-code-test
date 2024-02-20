@@ -14,6 +14,13 @@ struct ContentView: View {
 
     var body: some View {
         VStack {
+            HStack {
+                Image(.logo)
+                Spacer()
+            }
+            .padding(.horizontal, 16)
+            .padding(.bottom, 10)
+            
             FiltersView(filtersVM: filtersVM)
             
             RestaurantsView(viewModel: restaurantsVM, size: CGSize.zero)
