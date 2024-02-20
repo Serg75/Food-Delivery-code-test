@@ -39,7 +39,6 @@
 		95DC1B992B7CAE71001B46EB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DC1B982B7CAE71001B46EB /* ContentView.swift */; };
 		95DC1B9B2B7CAE84001B46EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95DC1B9A2B7CAE84001B46EB /* Assets.xcassets */; };
 		95DC1B9E2B7CAE84001B46EB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95DC1B9D2B7CAE84001B46EB /* Preview Assets.xcassets */; };
-		95DC1BB42B7CAE85001B46EB /* Food_DeliveryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DC1BB32B7CAE85001B46EB /* Food_DeliveryUITests.swift */; };
 		95DC1BCB2B7CAF12001B46EB /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DC1BCA2B7CAF12001B46EB /* Restaurant.swift */; };
 		95DC1BD32B7CAF81001B46EB /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DC1BD22B7CAF81001B46EB /* Status.swift */; };
 		95DC1BD82B7CAFAA001B46EB /* RestaurantsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DC1BD72B7CAFAA001B46EB /* RestaurantsViewModel.swift */; };
@@ -51,13 +50,6 @@
 
 /* Begin PBXContainerItemProxy section */
 		95DC1BA52B7CAE85001B46EB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 95DC1B8B2B7CAE70001B46EB /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 95DC1B922B7CAE71001B46EB;
-			remoteInfo = "Food Delivery";
-		};
-		95DC1BB02B7CAE85001B46EB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 95DC1B8B2B7CAE70001B46EB /* Project object */;
 			proxyType = 1;
@@ -101,9 +93,6 @@
 		95DC1B9F2B7CAE84001B46EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95DC1BA42B7CAE85001B46EB /* Food DeliveryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Food DeliveryTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		95DC1BAA2B7CAE85001B46EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		95DC1BAF2B7CAE85001B46EB /* Food DeliveryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Food DeliveryUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		95DC1BB32B7CAE85001B46EB /* Food_DeliveryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food_DeliveryUITests.swift; sourceTree = "<group>"; };
-		95DC1BB52B7CAE85001B46EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95DC1BCA2B7CAF12001B46EB /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		95DC1BD22B7CAF81001B46EB /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		95DC1BD72B7CAFAA001B46EB /* RestaurantsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsViewModel.swift; sourceTree = "<group>"; };
@@ -123,13 +112,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		95DC1BA12B7CAE85001B46EB /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		95DC1BAC2B7CAE85001B46EB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -198,7 +180,6 @@
 			children = (
 				95DC1B952B7CAE71001B46EB /* Food Delivery */,
 				95DC1BA72B7CAE85001B46EB /* Food DeliveryTests */,
-				95DC1BB22B7CAE85001B46EB /* Food DeliveryUITests */,
 				95DC1B942B7CAE71001B46EB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -208,7 +189,6 @@
 			children = (
 				95DC1B932B7CAE71001B46EB /* Food Delivery.app */,
 				95DC1BA42B7CAE85001B46EB /* Food DeliveryTests.xctest */,
-				95DC1BAF2B7CAE85001B46EB /* Food DeliveryUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -250,15 +230,6 @@
 				95DC1BAA2B7CAE85001B46EB /* Info.plist */,
 			);
 			path = "Food DeliveryTests";
-			sourceTree = "<group>";
-		};
-		95DC1BB22B7CAE85001B46EB /* Food DeliveryUITests */ = {
-			isa = PBXGroup;
-			children = (
-				95DC1BB32B7CAE85001B46EB /* Food_DeliveryUITests.swift */,
-				95DC1BB52B7CAE85001B46EB /* Info.plist */,
-			);
-			path = "Food DeliveryUITests";
 			sourceTree = "<group>";
 		};
 		95DC1BC42B7CAE9E001B46EB /* Models */ = {
@@ -358,24 +329,6 @@
 			productReference = 95DC1BA42B7CAE85001B46EB /* Food DeliveryTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		95DC1BAE2B7CAE85001B46EB /* Food DeliveryUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 95DC1BBE2B7CAE85001B46EB /* Build configuration list for PBXNativeTarget "Food DeliveryUITests" */;
-			buildPhases = (
-				95DC1BAB2B7CAE85001B46EB /* Sources */,
-				95DC1BAC2B7CAE85001B46EB /* Frameworks */,
-				95DC1BAD2B7CAE85001B46EB /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				95DC1BB12B7CAE85001B46EB /* PBXTargetDependency */,
-			);
-			name = "Food DeliveryUITests";
-			productName = "Food DeliveryUITests";
-			productReference = 95DC1BAF2B7CAE85001B46EB /* Food DeliveryUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -390,10 +343,6 @@
 						CreatedOnToolsVersion = 12.4;
 					};
 					95DC1BA32B7CAE85001B46EB = {
-						CreatedOnToolsVersion = 12.4;
-						TestTargetID = 95DC1B922B7CAE71001B46EB;
-					};
-					95DC1BAE2B7CAE85001B46EB = {
 						CreatedOnToolsVersion = 12.4;
 						TestTargetID = 95DC1B922B7CAE71001B46EB;
 					};
@@ -417,7 +366,6 @@
 			targets = (
 				95DC1B922B7CAE71001B46EB /* Food Delivery */,
 				95DC1BA32B7CAE85001B46EB /* Food DeliveryTests */,
-				95DC1BAE2B7CAE85001B46EB /* Food DeliveryUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -433,13 +381,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		95DC1BA22B7CAE85001B46EB /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		95DC1BAD2B7CAE85001B46EB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -499,14 +440,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		95DC1BAB2B7CAE85001B46EB /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				95DC1BB42B7CAE85001B46EB /* Food_DeliveryUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -514,11 +447,6 @@
 			isa = PBXTargetDependency;
 			target = 95DC1B922B7CAE71001B46EB /* Food Delivery */;
 			targetProxy = 95DC1BA52B7CAE85001B46EB /* PBXContainerItemProxy */;
-		};
-		95DC1BB12B7CAE85001B46EB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 95DC1B922B7CAE71001B46EB /* Food Delivery */;
-			targetProxy = 95DC1BB02B7CAE85001B46EB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -727,44 +655,6 @@
 			};
 			name = Release;
 		};
-		95DC1BBF2B7CAE85001B46EB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Food DeliveryUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.SS.Food-DeliveryUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Food Delivery";
-			};
-			name = Debug;
-		};
-		95DC1BC02B7CAE85001B46EB /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Food DeliveryUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.SS.Food-DeliveryUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Food Delivery";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -791,15 +681,6 @@
 			buildConfigurations = (
 				95DC1BBC2B7CAE85001B46EB /* Debug */,
 				95DC1BBD2B7CAE85001B46EB /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		95DC1BBE2B7CAE85001B46EB /* Build configuration list for PBXNativeTarget "Food DeliveryUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				95DC1BBF2B7CAE85001B46EB /* Debug */,
-				95DC1BC02B7CAE85001B46EB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
