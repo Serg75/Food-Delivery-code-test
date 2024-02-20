@@ -23,7 +23,9 @@ struct ContentView: View {
             filtersVM.setFilters(filterIDs: value)
         })
         .onChange(of: filtersVM.filterIDs, perform: { value in
-            restaurantsVM.filterIDs = value
+            withAnimation {
+                restaurantsVM.filterIDs = value
+            }
         })
     }
 }
