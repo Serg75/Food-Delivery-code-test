@@ -39,7 +39,6 @@
 		95DC1B992B7CAE71001B46EB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DC1B982B7CAE71001B46EB /* ContentView.swift */; };
 		95DC1B9B2B7CAE84001B46EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95DC1B9A2B7CAE84001B46EB /* Assets.xcassets */; };
 		95DC1B9E2B7CAE84001B46EB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95DC1B9D2B7CAE84001B46EB /* Preview Assets.xcassets */; };
-		95DC1BA92B7CAE85001B46EB /* Food_DeliveryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DC1BA82B7CAE85001B46EB /* Food_DeliveryTests.swift */; };
 		95DC1BB42B7CAE85001B46EB /* Food_DeliveryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DC1BB32B7CAE85001B46EB /* Food_DeliveryUITests.swift */; };
 		95DC1BCB2B7CAF12001B46EB /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DC1BCA2B7CAF12001B46EB /* Restaurant.swift */; };
 		95DC1BD32B7CAF81001B46EB /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DC1BD22B7CAF81001B46EB /* Status.swift */; };
@@ -101,7 +100,6 @@
 		95DC1B9D2B7CAE84001B46EB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		95DC1B9F2B7CAE84001B46EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95DC1BA42B7CAE85001B46EB /* Food DeliveryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Food DeliveryTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		95DC1BA82B7CAE85001B46EB /* Food_DeliveryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food_DeliveryTests.swift; sourceTree = "<group>"; };
 		95DC1BAA2B7CAE85001B46EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95DC1BAF2B7CAE85001B46EB /* Food DeliveryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Food DeliveryUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		95DC1BB32B7CAE85001B46EB /* Food_DeliveryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food_DeliveryUITests.swift; sourceTree = "<group>"; };
@@ -249,7 +247,6 @@
 			children = (
 				1832F9912B83702C0009FF3A /* Helpers */,
 				1832F99D2B8447630009FF3A /* ViewModels */,
-				95DC1BA82B7CAE85001B46EB /* Food_DeliveryTests.swift */,
 				95DC1BAA2B7CAE85001B46EB /* Info.plist */,
 			);
 			path = "Food DeliveryTests";
@@ -494,7 +491,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95DC1BA92B7CAE85001B46EB /* Food_DeliveryTests.swift in Sources */,
 				1832F9A12B84829D0009FF3A /* XCTestCase+Combine.swift in Sources */,
 				1832F9A92B84C6550009FF3A /* FiltersViewModelTests.swift in Sources */,
 				1832F9942B8370780009FF3A /* TimeFormatter.swift in Sources */,
