@@ -59,6 +59,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		180E31A12B84E8A500C5619C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		1820003D2B7CF27C009B6575 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		1820003F2B7D5C72009B6575 /* StatusFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusFetcher.swift; sourceTree = "<group>"; };
 		182000412B7D5DE1009B6575 /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
@@ -178,6 +179,7 @@
 		95DC1B8A2B7CAE70001B46EB = {
 			isa = PBXGroup;
 			children = (
+				180E31A12B84E8A500C5619C /* README.md */,
 				95DC1B952B7CAE71001B46EB /* Food Delivery */,
 				95DC1BA72B7CAE85001B46EB /* Food DeliveryTests */,
 				95DC1B942B7CAE71001B46EB /* Products */,
