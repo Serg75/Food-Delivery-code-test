@@ -23,6 +23,7 @@ struct RestaurantsView: View {
             List(viewModel.restaurants) { restaurantVM in
                 RestaurantCard(viewModel: restaurantVM, size: geometry.size)
                     .listRowSeparator(.hidden)
+                    .listRowBackground(Color(.systemGray6))
                     .onTapGesture {
                         selectedRestaurant = restaurantVM
                     }
