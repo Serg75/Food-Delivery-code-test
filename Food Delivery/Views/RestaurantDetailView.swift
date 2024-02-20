@@ -11,6 +11,7 @@ import Kingfisher
 struct RestaurantDetailView: View {
     @Environment(\.dismiss) var dismiss
     @StateObject private var viewModel: DetailsViewModel
+    @State private var showErrorAlert = false
 
     init(viewModel: DetailsViewModel) {
         _viewModel = StateObject(wrappedValue: viewModel)
@@ -47,6 +48,18 @@ struct RestaurantDetailView: View {
                 
                 Spacer()
             }
+        }
+        .onReceive(viewModel.$errorMessage) { errorMessage in
+            if errorMessage != nil {
+                showErrorAlert = true
+            }
+        }
+        .alert(isPresented: $showErrorAlert) {
+            Alert(
+                title: Text("Error"),
+                message: Text(viewModel.errorMessage ?? ""),
+                dismissButton: .default(Text("OK"))
+            )
         }
     }
 }

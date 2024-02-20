@@ -14,8 +14,10 @@ import SwiftUI
     @Published var statusText = "---"
     @Published var statusColor = Color.primary
     @Published var isLoading = false
-    let restaurantName: String
+    @Published var errorMessage: String?
     
+    let restaurantName: String
+
     private let restaurant: Restaurant
     
     private var filterHandler: FilterHandlerProtocol
@@ -49,7 +51,7 @@ import SwiftUI
                 statusText = status.isOpen ? "Open" : "Closed"
                 statusColor = status.isOpen ? Color(hex: 0x2ECC71) : Color(hex: 0xC0392B)
             } catch {
-                print("Failed to fetch restaurant detail: \(error)")
+                errorMessage = "Failed to fetch restaurant detail: \(error)"
             }
             isLoading = false
         }

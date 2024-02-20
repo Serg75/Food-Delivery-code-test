@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @StateObject private var restaurantsVM = RestaurantsViewModel()
     @StateObject private var filtersVM = FiltersViewModel(filterIDs: [])
+    @State private var showErrorAlert = false
 
     var body: some View {
         VStack {
@@ -33,6 +34,18 @@ struct ContentView: View {
                 restaurantsVM.filterIDs = value
             }
         })
+        .onReceive(restaurantsVM.$errorMessage) { errorMessage in
+            if errorMessage != nil {
+                showErrorAlert = true
+            }
+        }
+        .alert(isPresented: $showErrorAlert) {
+            Alert(
+                title: Text("Error"),
+                message: Text(restaurantsVM.errorMessage ?? ""),
+                dismissButton: .default(Text("OK"))
+            )
+        }
     }
 }
 

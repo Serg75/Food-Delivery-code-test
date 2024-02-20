@@ -16,6 +16,7 @@ import Foundation
         }
     }
     @Published var isLoading = false
+    @Published var errorMessage: String?
     
     private var allRestaurants: [RestaurantCardViewModel] = []
     private let restaurantsFetcher: RestaurantsQueryFetcher
@@ -33,7 +34,7 @@ import Foundation
                 restaurants = allRestaurants
                 allFilterIDs = Array(Set(fetchedRestaurants.flatMap { $0.filters }))
             } catch {
-                print("Failed to fetch restaurants: \(error)")
+                errorMessage = "Failed to fetch restaurants: \(error)"
             }
             isLoading = false
         }
