@@ -22,6 +22,7 @@ struct RestaurantsView: View {
         GeometryReader { geometry in
             List(viewModel.restaurants) { restaurantVM in
                 RestaurantCard(viewModel: restaurantVM, size: geometry.size)
+                    .listRowSeparator(.hidden)
                     .onTapGesture {
                         selectedRestaurant = restaurantVM
                     }
