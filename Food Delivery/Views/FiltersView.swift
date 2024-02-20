@@ -9,15 +9,19 @@ import SwiftUI
 import Kingfisher
 
 struct FiltersView: View {
-    @StateObject var viewModel: FiltersViewModel
+    @StateObject var filtersVM: FiltersViewModel
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             LazyHStack(spacing: 15) {
-                ForEach(viewModel.filters, id: \.id) { filterVM in
-                    filterView(viewModel: filterVM)
-                 }
-                 .listStyle(.plain)
+                ForEach(filtersVM.filterVMs, id: \.id) { filterVM in
+                    Button(action: {
+                        toggleFilter(filterID: filterVM.filterID)
+                    }) {
+                        filterView(viewModel: filterVM)
+                    }
+                }
+                .listStyle(.plain)
             }
             .padding(.horizontal, 20)
         }
@@ -31,7 +35,7 @@ struct FiltersView: View {
                 .resizable()
                 .frame(width: 48, height: 48)
                 .clipShape(Circle())
-
+            
             Spacer()
             
             Text(viewModel.filterLabel)
@@ -40,8 +44,16 @@ struct FiltersView: View {
             Spacer()
         }
         .frame(width: 144)
-        .background(Color(.systemBackground))
+        .isSelected(filtersVM.filterIDs.contains(viewModel.filterID))
         .clipShape(Capsule())
+    }
+    
+    private func toggleFilter(filterID: String) {
+        if filtersVM.filterIDs.contains(filterID) {
+            filtersVM.filterIDs.remove(filterID)
+        } else {
+            filtersVM.filterIDs.insert(filterID)
+        }
     }
 }
 
@@ -54,7 +66,7 @@ struct FiltersView: View {
             "23a38556-779e-4a3b-a75b-fcbc7a1c7a20"
         ])
     return HStack {
-        FiltersView(viewModel: viewModel)
+        FiltersView(filtersVM: viewModel)
             .padding(.vertical, 10)
     }
     .background(Color.gray)

@@ -52,6 +52,22 @@ struct Footer1Style: ViewModifier {
     }
 }
 
+struct SelectedStyle: ViewModifier {
+    let isSelected: Bool
+    func body(content: Content) -> some View {
+        if isSelected {
+            content
+                .foregroundColor(Color(.systemBackground))
+                .background(Color(hex: 0xE2A364))
+        } else {
+            content
+                .foregroundColor(Color.primary)
+                .background(Color(.systemBackground))
+        }
+    }
+}
+
+
 extension View {
     func title() -> some View {
         modifier(TitleStyle())
@@ -68,12 +84,16 @@ extension View {
     func subtitle() -> some View {
         modifier(SubtitleStyle())
     }
-
+    
     func subtitle1() -> some View {
         modifier(Subtitle1Style())
     }
-
+    
     func footer1() -> some View {
         modifier(Footer1Style())
+    }
+    
+    func isSelected(_ isSelected: Bool) -> some View {
+        modifier(SelectedStyle(isSelected: isSelected))
     }
 }

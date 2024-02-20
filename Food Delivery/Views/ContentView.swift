@@ -8,19 +8,22 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject private var viewModel = RestaurantsViewModel()
-    @StateObject private var filtersViewModel = FiltersViewModel(filterIDs: [])
+    @StateObject private var restaurantsVM = RestaurantsViewModel()
+    @StateObject private var filtersVM = FiltersViewModel(filterIDs: [])
     @State private var filterIDs: [String] = []
 
     var body: some View {
         VStack {
-            FiltersView(viewModel: filtersViewModel)
+            FiltersView(filtersVM: filtersVM)
             
-            RestaurantsView(viewModel: viewModel, size: CGSize.zero)
+            RestaurantsView(viewModel: restaurantsVM, size: CGSize.zero)
         }
         .background(Color(.systemGray6))
-        .onChange(of: viewModel.filters, perform: { value in
-            filtersViewModel.setFilters(filterIDs: value)
+        .onChange(of: restaurantsVM.allFilterIDs, perform: { value in
+            filtersVM.setFilters(filterIDs: value)
+        })
+        .onChange(of: filtersVM.filterIDs, perform: { value in
+            restaurantsVM.filterIDs = value
         })
     }
 }

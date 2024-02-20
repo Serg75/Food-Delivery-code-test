@@ -8,10 +8,12 @@
 import Foundation
 
 @MainActor class FiltersViewModel: ObservableObject {
-    @Published var filters: [FilterViewModel] = []
+    @Published var filterVMs: [FilterViewModel] = []
+    @Published var filterIDs: Set<String> = []
     
+    private var allFilters: [FilterViewModel] = []
     private let filterFetcher = FilterFetcher()
-    
+
     init(filterIDs: [String]) {
         setFilters(filterIDs: filterIDs)
     }
@@ -23,9 +25,11 @@ import Foundation
     }
     
     private func fetchFilters(_ filterIDs: [String]) async {
-        for filterId in filterIDs {
-            if let filter = try? await filterFetcher.fetchResult(query: filterId) {
-                filters.append(FilterViewModel(filter: filter))
+        for filterID in filterIDs {
+            if let filter = try? await filterFetcher.fetchResult(query: filterID) {
+                let filterViewModel = FilterViewModel(filter: filter)
+                filterVMs.append(filterViewModel)
+                allFilters.append(filterViewModel)
             }
         }
     }

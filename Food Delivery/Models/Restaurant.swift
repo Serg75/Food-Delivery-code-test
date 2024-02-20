@@ -11,7 +11,7 @@ struct Restaurant: Identifiable {
     let id: String
     let name: String
     let rating: Double
-    let filters: [String]
+    let filters: Set<String>
     let imageUrl: String
     let deliveryTime: Int
 }
@@ -22,7 +22,7 @@ extension Restaurant {
             id: apiModel.id,
             name: apiModel.name,
             rating: apiModel.rating,
-            filters: apiModel.filters,
+            filters: Set(apiModel.filters),
             imageUrl: apiModel.imageUrl,
             deliveryTime: apiModel.deliveryTime
         )

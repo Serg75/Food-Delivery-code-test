@@ -8,14 +8,14 @@
 import Foundation
 
 struct Status {
-    let restaurantId: String
+    let restaurantID: String
     let isOpen: Bool
 }
 
 extension Status {
     init(apiModel: API.Model.Status) {
         self.init(
-            restaurantId: apiModel.restaurantId,
+            restaurantID: apiModel.restaurantId,
             isOpen: apiModel.isOpen
         )
     }

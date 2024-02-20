@@ -12,8 +12,8 @@ class FilterHandler {
     private var filters = [Filter]()
     
     func fetchFilterDescriptions(for restaurant: Restaurant) async {
-        for filterId in restaurant.filters {
-            if let filter = try? await filterFetcher.fetchResult(query: filterId) {
+        for filterID in restaurant.filters {
+            if let filter = try? await filterFetcher.fetchResult(query: filterID) {
                 filters.append(filter)
             }
         }
